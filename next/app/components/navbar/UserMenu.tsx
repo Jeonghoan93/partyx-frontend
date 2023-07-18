@@ -1,11 +1,15 @@
 'use client'
 
+import useLoginModal from '@/app/hooks/useLoginModal'
+import useRegisterModal from '@/app/hooks/useRegisterModal'
 import { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from '../Avatar'
 import MenuItem from './MenuItem'
 
 const UserMenu = () => {
+  const registerModal = useRegisterModal()
+  const loginModal = useLoginModal()
   const [showMenu, setShowMenu] = useState(false)
 
   const handleShowMenu = () => {
@@ -45,8 +49,8 @@ const UserMenu = () => {
           <div className={'flex flex-col cursor-pointer'}>
             <>
               {/* Duplicate MenuItem to use multiple */}
-              <MenuItem onClickProp={() => {}} label="Login" />
-              <MenuItem onClickProp={() => {}} label="Sign up" />
+              <MenuItem onClickProp={registerModal.onOpen} label="Sign up" />
+              <MenuItem onClickProp={loginModal.onOpen} label="Login" />
               {/* Duplicate MenuItem to use multiple */}
             </>
           </div>

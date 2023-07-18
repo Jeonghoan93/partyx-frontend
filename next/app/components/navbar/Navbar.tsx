@@ -1,8 +1,15 @@
-import Container from '../Container'
-import SearchBar from './SearchBar'
-import UserMenu from './UserMenu'
+"use client";
 
-const Navbar = () => {
+import { User } from "@prisma/client";
+import Container from "../Container";
+import SearchBar from "./SearchBar";
+import UserMenu from "./UserMenu";
+
+interface NavbarProps {
+  currentUser?: User | null;
+}
+
+const Navbar = ({}) => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-4 border-b-[1px]">
@@ -18,7 +25,7 @@ const Navbar = () => {
         </Container>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="text-rose-500">Hi this is partyx font</div>;
+  return <div className="text-blue-500">Hi this is partyx font</div>
 }
